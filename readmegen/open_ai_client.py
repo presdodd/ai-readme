@@ -8,22 +8,6 @@ class OpenAiClient():
         else :
             self.client = OpenAI()
 
-    # response = client.responses.create(
-    #     model="gpt-4.1",
-    #     input="Write a one-sentence bedtime story about a unicorn."
-    # )
-
-    # print(response.output_text)
-
-    def prompt(self, p :str):
-        response = self.client.request.create(
-            model="gpt-4.1",
-            input=p
-        )
-
-        return response
-    
-
     def generate_readme(self, directory :str):
         file_texts = build_context(directory)
 
@@ -34,7 +18,7 @@ class OpenAiClient():
                     "role": "developer",
                     "content": ("You are a senior developer tasked with writing a README.md file. "
                                 "Respond only in the .md format. "
-                                "Use the following context to understand the project structure, purpose, and dependencies.")
+                                "Use the following context to understand the project structure, purpose, dependencies, and how to run it.")
                 },
                 {
                     "role": "user",

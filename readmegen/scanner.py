@@ -28,5 +28,3 @@ def build_context(dir: str, extensions: List[str] = None) -> str:
         context += f
 
     return context
-
-# walk('/Users/prestondodd/git/gpt-readme')
